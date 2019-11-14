@@ -1,0 +1,11 @@
+-- Create new_game with easy mode 
+new_game(easy)
+fire([A,2])
+fire([B,3])
+fire([C,1])
+bomb([C,2],[C,3])
+bomb([A,4],[B,4])
+fire([A,1])
+fire([B,1])
+fire([D,1])
+

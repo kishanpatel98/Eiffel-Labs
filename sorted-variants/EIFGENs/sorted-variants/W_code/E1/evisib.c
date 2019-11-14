@@ -1,0 +1,3323 @@
+#include "eif_eiffel.h"
+#include "eif_cecil.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+static char * type_key [] = {
+"STUDENT_DESIGN_TESTS",
+"SHARED_EXECUTION_ENVIRONMENT",
+"POINTER_REF",
+"INTERVAL",
+"ES_TEST",
+"ARRAYED_LIST_CURSOR",
+"SYSTEM_STRING_FACTORY",
+"SED_READER_WRITER",
+"FUNCTION",
+"IMMUTABLE_STRING_8",
+"BOUNDED",
+(char *) 0,
+"GROUP_ELEMENT",
+"ARRAYED_STACK",
+"TABLE_ITERATION_CURSOR",
+"TRACING_SETTING",
+"SERIALIZATION_FAILURE",
+"MEMORY_STREAM",
+(char *) 0,
+"KV_PAIR",
+"RT_EXTENSION_COMMON",
+"MODEL_TESTS",
+(char *) 0,
+"CURSOR_STRUCTURE",
+"STACK",
+(char *) 0,
+"MISMATCH_CORRECTOR",
+"SED_META_MODEL",
+(char *) 0,
+(char *) 0,
+"REFLECTOR_HELPER",
+"ACTIVE",
+"BOOLEAN",
+"NATURAL_32",
+"PAIR",
+"PERSON",
+"HASHABLE",
+"SED_BASIC_SERIALIZER",
+"FILE",
+"ES_TESTABLE",
+"SED_VERSIONS",
+"ARRAY_ITERATION_CURSOR",
+"ACTIVE_INTEGER_INTERVAL",
+(char *) 0,
+"RT_DBG_LOCAL_RECORD",
+"IDENTIFIED",
+"ARGUMENTS_32",
+"ES_HTML_GEN_SUITE",
+(char *) 0,
+"EXCEPTION",
+(char *) 0,
+"ITERABLE_SORTED_RBT_MAP_TESTS",
+(char *) 0,
+"STRING_ITERATION_CURSOR",
+(char *) 0,
+"STRING_TO_REAL_CONVERTOR",
+(char *) 0,
+"HASH_TABLE",
+"FINITE",
+(char *) 0,
+"MANAGED_POINTER",
+"CHECK_VIOLATION",
+"PATH",
+(char *) 0,
+"REFLECTED_OBJECT",
+"OBJECT_GRAPH_TRAVERSABLE",
+"ROUTINE_FAILURE",
+(char *) 0,
+"SED_TYPE_MISMATCH",
+(char *) 0,
+"UNIX_SIGNALS",
+(char *) 0,
+"NODE",
+"BAG",
+"INTEGER_16",
+"EXCEPTION_MANAGER_FACTORY",
+"ITERABLE",
+"INTEGER_16_REF",
+"DATE_TIME_VALUE",
+"COLLECTION",
+"MEMORY_STRUCTURE",
+"TYPED_POINTER",
+"ES_VIOLATION_CASE",
+"TIME",
+"MATH_CONST",
+"DATE_TIME_CODE_STRING",
+"MISMATCH_FAILURE",
+"SPECIAL",
+"CHARACTER_8_REF",
+(char *) 0,
+"SED_UTILITIES",
+"FILE_ITERATION_CURSOR",
+"STD_FILES",
+"RESCUE_FAILURE",
+"LIST",
+"MISMATCH_INFORMATION",
+"HEXADECIMAL_STRING_TO_INTEGER_CONVERTER",
+"STRING_TRACING_HANDLER",
+"LANGUAGE_EXCEPTION",
+"CHARACTER_32",
+"TRAVERSABLE",
+"COUNTABLE",
+"RT_DBG_ATTRIBUTE_RECORD",
+"DISPENSER",
+"ITERABLE_SORTED_MAP_TESTS",
+"RAW_FILE",
+"DYNAMIC_CHAIN",
+(char *) 0,
+(char *) 0,
+(char *) 0,
+"SORTED_MAP_CURSOR",
+"HASH_TABLE_CURSOR",
+(char *) 0,
+"INDEXABLE",
+(char *) 0,
+"LOOP_INVARIANT_VIOLATION",
+(char *) 0,
+(char *) 0,
+(char *) 0,
+"INTEGER_64",
+"SED_INDEPENDENT_DESERIALIZER",
+"CHARACTER_PROPERTY",
+"STRING_32_ITERATION_CURSOR",
+"INTEGER_INTERVAL",
+(char *) 0,
+"ISE_EXCEPTION_MANAGER",
+"FILE_COMPARER",
+"CURSOR",
+"SED_BINARY_READER_WRITER",
+"FUN",
+"DATE_DURATION",
+"OBJECT_GRAPH_BREADTH_FIRST_TRAVERSABLE",
+"PATH_NAME",
+"SORTED_BST_MAP",
+(char *) 0,
+"DATE_TIME",
+(char *) 0,
+"DATE_TIME_CODE",
+(char *) 0,
+"RBT_TESTS",
+"DATE_TIME_LANGUAGE_CONSTANTS",
+(char *) 0,
+"BASIC_ROUTINES",
+"REFLECTOR_CONSTANTS",
+"GENERAL_SPECIAL_ITERATION_CURSOR",
+"NATIVE_STRING",
+(char *) 0,
+"INTERNAL_HELPER",
+"ACTION_SEQUENCE",
+"DATA_EXCEPTION",
+"READABLE_INDEXABLE",
+(char *) 0,
+"TIME_DURATION",
+(char *) 0,
+"RT_DBG_INTERNAL",
+(char *) 0,
+"STORABLE",
+"TIME_CONSTANTS",
+"NATURAL_16_REF",
+(char *) 0,
+"SEQUENCE",
+"VOID_ASSIGNED_TO_EXPANDED",
+"ARGUMENTS",
+(char *) 0,
+"INVARIANT_VIOLATION",
+"ADDRESS_APPLIED_TO_MELTED_FEATURE",
+"CREATE_ON_DEFERRED",
+"OLD_VIOLATION",
+"REAL_64",
+"CELL",
+"PREDICATE",
+"PROFILING_SETTING",
+"EXCEPTION_IN_SIGNAL_HANDLER_FAILURE",
+"DATE_VALUE",
+(char *) 0,
+"IO_MEDIUM",
+(char *) 0,
+"STRING_SEARCHER",
+"RT_DBG_COMMON",
+"OBJECT_GRAPH_MARKER",
+(char *) 0,
+"CHAIN",
+"DEBUG_OUTPUT",
+(char *) 0,
+"READABLE_STRING_8",
+"C_STRING",
+(char *) 0,
+"EXCEPTIONS",
+"SED_RECOVERABLE_SERIALIZER",
+"GC_INFO",
+"BOOL_STRING",
+"TRACING_HANDLER",
+(char *) 0,
+"SINGLE_MATH",
+"ISE_SCOOP_RUNTIME",
+"OPERATING_SYSTEM_EXCEPTION",
+"UNBOUNDED",
+"LINKED_LIST_CURSOR",
+"REAL_32",
+"STRING_32",
+"HASH_TABLE_ITERATION_CURSOR",
+"SED_BASIC_DESERIALIZER",
+"DURATION",
+"BILINEAR",
+"BOX",
+(char *) 0,
+(char *) 0,
+"FLOATING_POINT_FAILURE",
+"FIBONACCI",
+"LINKED_QUEUE",
+"ES_TEST_CASE",
+"BAD_INSPECT_VALUE",
+"NUMERIC",
+"NO_MORE_MEMORY",
+"OPERATING_SYSTEM_FAILURE",
+"SED_SESSION_DESERIALIZER",
+"IO_FAILURE",
+"SED_MULTI_OBJECT_SERIALIZATION",
+(char *) 0,
+(char *) 0,
+"DATE",
+"DEVELOPER_EXCEPTION",
+"TYPED_INDEXABLE_ITERATION_CURSOR",
+"DATE_TIME_PARSER",
+"OPERATING_ENVIRONMENT",
+"TABLE",
+"RT_DBG_EXECUTION_RECORDER",
+(char *) 0,
+"DATE_MEASUREMENT",
+"IDENTIFIED_CONTROLLER",
+"FIND_SEPARATOR_FACILITY",
+"ITERABLE_SORTED_BST_MAP_TESTS",
+"EXECUTION_ENVIRONMENT",
+"INTEGER_32",
+(char *) 0,
+"SORTED_MAP_DESIGN",
+"REFLECTED_REFERENCE_OBJECT",
+"RT_DEBUGGER",
+"RT_EXTENSION_GENERAL",
+"LINKABLE",
+"DECLARATOR",
+(char *) 0,
+"EXTERNAL_FAILURE",
+"RT_DBG_FIELD_RECORD",
+(char *) 0,
+"STRING_HANDLER",
+(char *) 0,
+"TIME_MEASUREMENT",
+(char *) 0,
+"STRING_8_SEARCHER",
+"ISE_RUNTIME",
+"OBSOLETE_EXCEPTION",
+"DISPOSABLE",
+"EIFFEL_RUNTIME_PANIC",
+(char *) 0,
+"IMMUTABLE_STRING_32",
+"REAL_64_REF",
+"SORTED_TREE",
+"FORMAT_INTEGER",
+"PRECONDITION_VIOLATION",
+"SORTED_LINEAR_MAP",
+"VARIANT_VIOLATION",
+"POSTCONDITION_VIOLATION",
+"NATURAL_8",
+"UTF_CONVERTER",
+"OPERATING_SYSTEM_SIGNAL_FAILURE",
+"STREAM",
+"REAL_32_REF",
+"REFLECTOR",
+"TYPE",
+"POINTER",
+"INTERNAL",
+"ES_BOOLEAN_TEST_CASE",
+(char *) 0,
+"TEST_CASE",
+"SORTED_BST",
+"EIFFELSTUDIO_SPECIFIC_LANGUAGE_EXCEPTION",
+"ABSOLUTE",
+"SYSTEM_STRING",
+"SYS_EXCEPTION",
+"FILE_INFO",
+"ABSTRACT_SPECIAL",
+"SED_OBJECTS_TABLE",
+"INTEGER_32_REF",
+"LINKED_STACK",
+"BAG",
+"READABLE_STRING_32",
+(char *) 0,
+"NATIVE_STRING_HANDLER",
+"DYNAMIC_LIST",
+"INFINITE",
+"PLATFORM",
+"SED_RECOVERABLE_DESERIALIZER",
+"MACHINE_EXCEPTION",
+"TIME_UTILITY",
+"INTEGER_OVERFLOW_CHECKER",
+"NATURAL_32_REF",
+"INT_KEY_TESTS",
+"LINKED_LIST",
+"RESIZABLE",
+"SEQ_STRING",
+"PROCEDURE",
+"DATE_VALIDITY_CHECKER",
+"STRING_TABLE",
+"CHARACTER_32_REF",
+(char *) 0,
+"SED_INDEPENDENT_SERIALIZER",
+"RANDOM",
+"THREAD_ENVIRONMENT",
+"MEM_INFO",
+"DATE_TIME_MEASUREMENT",
+"BOOLEAN_REF",
+"VERSIONABLE",
+"SED_ERROR",
+(char *) 0,
+"SEQ",
+"ARRAYED_LIST_ITERATION_CURSOR",
+"ANY",
+"SET",
+"P_KEY_TESTS",
+(char *) 0,
+"STRING_TO_NUMERIC_CONVERTOR",
+(char *) 0,
+(char *) 0,
+"ES_HTML_GEN",
+"LINKED_LIST_ITERATION_CURSOR",
+"RT_DBG_VALUE_RECORD",
+(char *) 0,
+"EXCEP_CONST",
+"PLAIN_TEXT_FILE",
+"RT_DBG_CALL_RECORD",
+(char *) 0,
+(char *) 0,
+"SED_SESSION_SERIALIZER",
+"HARDWARE_EXCEPTION",
+"LINEAR_TESTS",
+"TIME_VALUE",
+"NUMERIC_INFORMATION",
+"ARRAYED_LIST",
+"ASSERTION_VIOLATION",
+"NATURAL_64",
+"EIF_EXCEPTION",
+"EXCEPTION_MANAGER",
+"ROUTINE",
+"REFACTORING_HELPER",
+"READ_WRITE_LOCK",
+"STUDENT_TESTS",
+"BST_TESTS",
+"ECMA_INTERNAL",
+"INTERACTIVE_LIST",
+(char *) 0,
+"SED_MEDIUM_READER_WRITER_1",
+(char *) 0,
+(char *) 0,
+"TO_SPECIAL",
+(char *) 0,
+"TUPLE",
+"SEMAPHORE",
+(char *) 0,
+"SORTED_RBT",
+"TIME_VALIDITY_CHECKER",
+"RT_EXTENSION",
+"VOID_TARGET",
+(char *) 0,
+"NATURAL_8_REF",
+"FILE_NAME",
+(char *) 0,
+"ARRAYED_QUEUE_ITERATION_CURSOR",
+"SED_MEMORY_READER_WRITER",
+"INTEGER_8",
+"ITERABLE_SORTED_LINEAR_MAP_TESTS",
+"CHARACTER_8",
+(char *) 0,
+"DATE_TIME_TOOLS",
+(char *) 0,
+"RESUMPTION_FAILURE",
+"ROOT",
+"OBJECT_GRAPH_DEPTH_FIRST_TRAVERSABLE",
+"ITERATION_CURSOR",
+(char *) 0,
+"LINEAR",
+"PART_COMPARABLE",
+"SORTED_MAP_ADT",
+"PRIMES",
+"STRING_32_SEARCHER",
+"CLASS_NAME_TRANSLATIONS",
+(char *) 0,
+"FORMAT_DOUBLE",
+"UNIX_FILE_INFO",
+(char *) 0,
+"SORTED_ADT",
+"READABLE_INDEXABLE_ITERATION_CURSOR",
+"ES_SUITE",
+(char *) 0,
+"ASCII",
+"DATE_TIME_VALIDITY_CHECKER",
+"MEMORY",
+"COMPARABLE",
+"SED_MEDIUM_READER_WRITER",
+"CONSOLE",
+"COUNTABLE_SEQUENCE",
+"ARRAYED_QUEUE",
+"NATIVE_ARRAY",
+"CIRCULAR_CURSOR",
+"SORTED_RBT_MAP",
+"MEM_CONST",
+"INDEXABLE_ITERATION_CURSOR",
+"SED_ERROR_FACTORY",
+"UTIL",
+"STRING_8_ITERATION_CURSOR",
+(char *) 0,
+"SET",
+"QUEUE",
+"ITERABLE_SORTED_MODEL_MAP_TESTS",
+"IMMUTABLE_STRING_GENERAL",
+(char *) 0,
+"STRING_TO_INTEGER_CONVERTOR",
+"READABLE_STRING_GENERAL",
+(char *) 0,
+"TABLE_ITERABLE",
+"REFLECTED_COPY_SEMANTICS_OBJECT",
+(char *) 0,
+"C_DATE",
+(char *) 0,
+"ARRAY",
+"SORTED_MODEL_MAP",
+(char *) 0,
+"DATE_CONSTANTS",
+"SPECIAL_ITERATION_CURSOR",
+"REPEATABLE",
+(char *) 0,
+"MUTEX",
+(char *) 0,
+"DATE_TIME_DURATION",
+(char *) 0,
+"DIRECTORY_NAME",
+(char *) 0,
+"COM_FAILURE",
+"IDENTIFIED_ROUTINES",
+(char *) 0,
+"CODE_VALIDITY_CHECKER",
+"FILE_UTILITIES",
+(char *) 0,
+"INTEGER_8_REF",
+"CONTAINER",
+(char *) 0,
+(char *) 0,
+"INTEGER_64_REF",
+"STRING_GENERAL",
+(char *) 0,
+"SED_ABSTRACT_OBJECTS_TABLE",
+"NATURAL_16",
+"DOUBLE_MATH",
+"STRING_8",
+"CONDITION_VARIABLE",
+"SED_STORABLE_FACILITIES",
+(char *) 0,
+"EIFFEL_RUNTIME_EXCEPTION",
+"SORTED_LINEAR",
+"DIRECTORY",
+"NATURAL_64_REF",
+"RT_DBG_EXECUTION_PARAMETERS",
+"AGENT_TRACING_HANDLER",
+};
+
+static uint32 patterns423 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types423 [] = {
+1038,
+};
+
+static uint32 patterns8 [] = {
+SK_REF,
+SK_BOOL,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types8 [] = {
+269,
+382,
+};
+
+static uint32 patterns109 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types109 [] = {
+282,
+333,
+373,
+410,
+446,
+497,
+561,
+600,
+653,
+690,
+726,
+763,
+798,
+846,
+873,
+};
+
+static uint32 patterns167 [] = {
+SK_REF,
+SK_BOOL,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types167 [] = {
+507,
+851,
+861,
+};
+
+static uint32 patterns129 [] = {
+SK_UINT32,
+SK_POINTER,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types129 [] = {
+573,
+614,
+618,
+885,
+911,
+};
+
+static uint32 patterns401 [] = {
+SK_INT32,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types401 [] = {
+1026,
+1041,
+1063,
+};
+
+static uint32 patterns194 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types194 [] = {
+265,
+314,
+354,
+391,
+427,
+462,
+477,
+530,
+579,
+642,
+678,
+714,
+751,
+787,
+819,
+};
+
+static uint32 patterns325 [] = {
+SK_REF,
+SK_BOOL,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types325 [] = {
+508,
+849,
+859,
+};
+
+static uint32 patterns256 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types256 [] = {
+266,
+315,
+355,
+392,
+428,
+463,
+478,
+531,
+580,
+643,
+679,
+715,
+752,
+788,
+820,
+};
+
+static uint32 patterns399 [] = {
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types399 [] = {
+1016,
+1021,
+1024,
+1056,
+};
+
+static uint32 patterns168 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types168 [] = {
+283,
+341,
+381,
+418,
+454,
+505,
+562,
+601,
+661,
+698,
+734,
+771,
+806,
+847,
+874,
+};
+
+static uint32 patterns260 [] = {
+SK_POINTER,
+SK_REF,
+SK_UINT8,
+SK_BOOL,
+SK_UINT16,
+SK_UINT32,
+SK_UINT64,
+SK_CHAR32,
+SK_INT32,
+SK_INT64,
+SK_INT8,
+SK_REAL64,
+SK_REAL32,
+SK_INT16,
+SK_CHAR8,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types260 [] = {
+547,
+548,
+853,
+888,
+921,
+922,
+923,
+924,
+936,
+938,
+941,
+942,
+943,
+944,
+946,
+};
+
+static uint32 patterns101 [] = {
+SK_UINT32,
+SK_POINTER,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types101 [] = {
+549,
+610,
+615,
+883,
+909,
+};
+
+static uint32 patterns51 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types51 [] = {
+260,
+309,
+349,
+386,
+422,
+457,
+472,
+527,
+576,
+639,
+675,
+711,
+748,
+784,
+814,
+};
+
+static uint32 patterns403 [] = {
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types403 [] = {
+1040,
+1050,
+1062,
+};
+
+static uint32 patterns239 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types239 [] = {
+267,
+316,
+356,
+393,
+429,
+464,
+479,
+532,
+581,
+644,
+680,
+716,
+753,
+789,
+821,
+};
+
+static uint32 patterns103 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types103 [] = {
+263,
+312,
+352,
+389,
+425,
+460,
+475,
+514,
+520,
+634,
+670,
+706,
+743,
+779,
+817,
+};
+
+static uint32 patterns297 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types297 [] = {
+268,
+317,
+357,
+394,
+430,
+465,
+480,
+533,
+582,
+645,
+681,
+717,
+754,
+790,
+822,
+};
+
+static uint32 patterns10 [] = {
+SK_POINTER,
+SK_REF,
+SK_CHAR32,
+SK_INT8,
+SK_UINT32,
+SK_INT64,
+SK_BOOL,
+SK_CHAR8,
+SK_UINT8,
+SK_INT16,
+SK_REAL64,
+SK_UINT64,
+SK_UINT16,
+SK_REAL32,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types10 [] = {
+248,
+254,
+344,
+512,
+518,
+524,
+541,
+545,
+855,
+891,
+895,
+898,
+901,
+919,
+926,
+};
+
+static uint32 patterns2 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types2 [] = {
+278,
+325,
+365,
+402,
+438,
+487,
+556,
+595,
+627,
+663,
+699,
+736,
+772,
+842,
+868,
+};
+
+static uint32 patterns233 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types233 [] = {
+288,
+335,
+375,
+412,
+448,
+499,
+567,
+606,
+655,
+692,
+728,
+765,
+800,
+832,
+879,
+};
+
+static uint32 patterns30 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types30 [] = {
+270,
+318,
+358,
+395,
+431,
+466,
+481,
+534,
+583,
+646,
+682,
+718,
+755,
+791,
+823,
+};
+
+static uint32 patterns222 [] = {
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types222 [] = {
+625,
+};
+
+static uint32 patterns94 [] = {
+SK_POINTER,
+SK_CHAR32,
+SK_INT8,
+SK_UINT32,
+SK_BOOL,
+SK_CHAR8,
+SK_UINT8,
+SK_REF,
+SK_INT64,
+SK_INT16,
+SK_UINT16,
+SK_REAL32,
+SK_REAL64,
+SK_INT32,
+SK_UINT64,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types94 [] = {
+246,
+342,
+510,
+516,
+539,
+543,
+917,
+945,
+947,
+948,
+949,
+950,
+951,
+957,
+958,
+};
+
+static uint32 patterns231 [] = {
+SK_REF,
+SK_BOOL,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types231 [] = {
+509,
+850,
+860,
+};
+
+static uint32 patterns100 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types100 [] = {
+290,
+339,
+379,
+416,
+452,
+503,
+569,
+608,
+659,
+696,
+732,
+769,
+804,
+836,
+881,
+};
+
+static uint32 patterns392 [] = {
+SK_INT32,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types392 [] = {
+1013,
+1036,
+1054,
+};
+
+static uint32 patterns183 [] = {
+SK_REF,
+SK_INT32,
+SK_POINTER,
+SK_INT32,
+SK_UINT16,
+SK_INT32,
+SK_REAL32,
+SK_INT32,
+SK_UINT8,
+SK_INT32,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REAL64,
+SK_INT32,
+SK_INT8,
+SK_INT32,
+SK_INT16,
+SK_INT32,
+SK_INT64,
+SK_INT32,
+SK_UINT64,
+SK_INT32,
+SK_BOOL,
+SK_INT32,
+SK_CHAR32,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types183 [] = {
+258,
+337,
+377,
+414,
+450,
+501,
+552,
+591,
+657,
+694,
+730,
+767,
+802,
+834,
+864,
+};
+
+static uint32 patterns390 [] = {
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types390 [] = {
+1017,
+1022,
+1025,
+1055,
+};
+
+static uint32 patterns383 [] = {
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types383 [] = {
+1039,
+1058,
+1067,
+};
+
+static uint32 patterns148 [] = {
+SK_REF,
+SK_REF,
+SK_POINTER,
+SK_REF,
+SK_UINT16,
+SK_REF,
+SK_REAL32,
+SK_REF,
+SK_UINT8,
+SK_REF,
+SK_CHAR8,
+SK_REF,
+SK_UINT32,
+SK_REF,
+SK_INT32,
+SK_REF,
+SK_REAL64,
+SK_REF,
+SK_INT8,
+SK_REF,
+SK_INT16,
+SK_REF,
+SK_INT64,
+SK_REF,
+SK_UINT64,
+SK_REF,
+SK_BOOL,
+SK_REF,
+SK_CHAR32,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types148 [] = {
+280,
+324,
+364,
+401,
+437,
+486,
+559,
+598,
+648,
+684,
+720,
+757,
+793,
+844,
+871,
+};
+
+static uint32 patterns224 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types224 [] = {
+913,
+};
+
+static uint32 patterns269 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types269 [] = {
+271,
+319,
+359,
+396,
+432,
+467,
+482,
+535,
+584,
+629,
+665,
+701,
+738,
+774,
+824,
+};
+
+static uint32 patterns248 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types248 [] = {
+285,
+329,
+369,
+406,
+442,
+493,
+564,
+603,
+649,
+686,
+722,
+759,
+794,
+828,
+876,
+};
+
+static uint32 patterns181 [] = {
+SK_INT32,
+SK_BOOL,
+SK_REF,
+SK_CHAR32,
+SK_UINT64,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types181 [] = {
+623,
+811,
+857,
+939,
+940,
+};
+
+static uint32 patterns9 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types9 [] = {
+852,
+};
+
+static uint32 patterns349 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types349 [] = {
+289,
+336,
+376,
+413,
+449,
+500,
+568,
+607,
+656,
+693,
+729,
+766,
+801,
+833,
+880,
+};
+
+static uint32 patterns200 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types200 [] = {
+291,
+340,
+380,
+417,
+453,
+504,
+570,
+609,
+660,
+697,
+733,
+770,
+805,
+837,
+882,
+};
+
+static uint32 patterns92 [] = {
+SK_INT32,
+SK_BOOL,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types92 [] = {
+624,
+830,
+906,
+};
+
+static uint32 patterns219 [] = {
+SK_UINT32,
+SK_POINTER,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types219 [] = {
+572,
+612,
+616,
+884,
+908,
+};
+
+static uint32 patterns309 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types309 [] = {
+286,
+330,
+370,
+407,
+443,
+494,
+565,
+604,
+650,
+687,
+723,
+760,
+795,
+829,
+877,
+};
+
+static uint32 patterns36 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types36 [] = {
+262,
+311,
+351,
+388,
+424,
+459,
+474,
+528,
+577,
+640,
+676,
+712,
+749,
+785,
+816,
+};
+
+static uint32 patterns235 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types235 [] = {
+914,
+};
+
+static uint32 patterns251 [] = {
+SK_REF,
+SK_REF,
+SK_POINTER,
+SK_REF,
+SK_UINT16,
+SK_REF,
+SK_REAL32,
+SK_REF,
+SK_UINT8,
+SK_REF,
+SK_CHAR8,
+SK_REF,
+SK_INT32,
+SK_REF,
+SK_UINT32,
+SK_REF,
+SK_CHAR32,
+SK_REF,
+SK_REAL64,
+SK_REF,
+SK_INT8,
+SK_REF,
+SK_INT16,
+SK_REF,
+SK_INT64,
+SK_REF,
+SK_UINT64,
+SK_REF,
+SK_BOOL,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types251 [] = {
+273,
+321,
+361,
+398,
+434,
+469,
+484,
+537,
+586,
+631,
+667,
+703,
+740,
+776,
+826,
+};
+
+static uint32 patterns197 [] = {
+SK_REF,
+SK_INT32,
+SK_POINTER,
+SK_INT32,
+SK_UINT16,
+SK_INT32,
+SK_REAL32,
+SK_INT32,
+SK_UINT8,
+SK_INT32,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_INT32,
+SK_UINT32,
+SK_POINTER,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_REAL64,
+SK_INT32,
+SK_INT8,
+SK_INT32,
+SK_INT16,
+SK_INT32,
+SK_INT64,
+SK_INT32,
+SK_UINT64,
+SK_INT32,
+SK_BOOL,
+SK_INT32,
+SK_CHAR32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types197 [] = {
+275,
+338,
+378,
+415,
+451,
+502,
+553,
+571,
+592,
+611,
+658,
+695,
+731,
+768,
+803,
+835,
+865,
+910,
+};
+
+static uint32 patterns381 [] = {
+SK_INT32,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types381 [] = {
+1012,
+1042,
+1066,
+};
+
+static uint32 patterns330 [] = {
+SK_INT32,
+SK_BOOL,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types330 [] = {
+622,
+810,
+905,
+};
+
+static uint32 patterns157 [] = {
+SK_REF,
+SK_INT64,
+SK_INT8,
+SK_INT16,
+SK_CHAR8,
+SK_BOOL,
+SK_CHAR32,
+SK_UINT8,
+SK_UINT32,
+SK_UINT16,
+SK_REAL64,
+SK_POINTER,
+SK_UINT64,
+SK_INT32,
+SK_REAL32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types157 [] = {
+292,
+522,
+887,
+889,
+928,
+929,
+930,
+931,
+932,
+933,
+934,
+937,
+952,
+953,
+954,
+};
+
+static uint32 patterns404 [] = {
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types404 [] = {
+1045,
+1051,
+1064,
+};
+
+static uint32 patterns384 [] = {
+SK_INT32,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types384 [] = {
+1011,
+1069,
+1071,
+};
+
+static uint32 patterns11 [] = {
+SK_REF,
+SK_POINTER,
+SK_EXP + 227,
+SK_POINTER,
+SK_EXP + 206,
+SK_EXP + 191,
+SK_EXP + 209,
+SK_EXP + 215,
+SK_EXP + 212,
+SK_EXP + 224,
+SK_EXP + 188,
+SK_EXP + 221,
+SK_EXP + 218,
+SK_EXP + 200,
+SK_EXP + 197,
+SK_EXP + 194,
+SK_EXP + 203,
+SK_POINTER,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_EXP + 12,
+SK_CHAR8,
+SK_POINTER,
+SK_POINTER,
+SK_POINTER,
+SK_POINTER,
+SK_POINTER,
+SK_UINT32,
+SK_EXP + 22,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_BOOL,
+SK_INT64,
+SK_UINT64,
+SK_POINTER,
+SK_CHAR32,
+SK_POINTER,
+SK_POINTER,
+SK_POINTER,
+SK_POINTER,
+SK_POINTER,
+SK_POINTER,
+SK_EXP + 1028,
+SK_EXP + 1032,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types11 [] = {
+245,
+249,
+250,
+255,
+293,
+294,
+295,
+296,
+297,
+298,
+299,
+300,
+301,
+302,
+303,
+304,
+305,
+327,
+345,
+367,
+404,
+440,
+455,
+489,
+513,
+519,
+525,
+542,
+546,
+557,
+588,
+596,
+635,
+671,
+707,
+735,
+744,
+780,
+856,
+869,
+892,
+896,
+899,
+902,
+920,
+927,
+1030,
+1034,
+};
+
+static uint32 patterns396 [] = {
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types396 [] = {
+1044,
+1059,
+1068,
+};
+
+static uint32 patterns322 [] = {
+SK_BOOL,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types322 [] = {
+808,
+858,
+};
+
+static uint32 patterns400 [] = {
+SK_REF,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types400 [] = {
+1020,
+1023,
+};
+
+static uint32 patterns56 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types56 [] = {
+287,
+334,
+374,
+411,
+447,
+498,
+566,
+605,
+654,
+691,
+727,
+764,
+799,
+831,
+878,
+};
+
+static uint32 patterns320 [] = {
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types320 [] = {
+626,
+};
+
+static uint32 patterns43 [] = {
+SK_INT32,
+SK_BOOL,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types43 [] = {
+620,
+812,
+903,
+};
+
+static uint32 patterns135 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types135 [] = {
+281,
+332,
+372,
+409,
+445,
+496,
+560,
+599,
+652,
+689,
+725,
+762,
+797,
+845,
+872,
+};
+
+static uint32 patterns7 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types7 [] = {
+252,
+};
+
+static uint32 patterns271 [] = {
+SK_REF,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types271 [] = {
+893,
+907,
+};
+
+static uint32 patterns402 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types402 [] = {
+1015,
+};
+
+static uint32 patterns345 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types345 [] = {
+284,
+323,
+363,
+400,
+436,
+492,
+563,
+602,
+647,
+683,
+719,
+756,
+792,
+848,
+875,
+};
+
+static uint32 patterns393 [] = {
+SK_REF,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types393 [] = {
+1018,
+1019,
+};
+
+static uint32 patterns180 [] = {
+SK_INT32,
+SK_BOOL,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types180 [] = {
+621,
+809,
+904,
+};
+
+static uint32 patterns39 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types39 [] = {
+257,
+307,
+347,
+384,
+420,
+491,
+550,
+590,
+637,
+673,
+709,
+746,
+782,
+838,
+862,
+};
+
+static uint32 patterns6 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types6 [] = {
+256,
+};
+
+static uint32 patterns189 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types189 [] = {
+916,
+};
+
+static uint32 patterns84 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types84 [] = {
+277,
+331,
+371,
+408,
+444,
+495,
+555,
+594,
+651,
+688,
+724,
+761,
+796,
+841,
+867,
+};
+
+static uint32 patterns395 [] = {
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types395 [] = {
+1047,
+1049,
+1061,
+};
+
+static uint32 patterns214 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types214 [] = {
+956,
+};
+
+static uint32 patterns258 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types258 [] = {
+261,
+310,
+350,
+387,
+423,
+458,
+473,
+515,
+521,
+633,
+669,
+705,
+742,
+778,
+815,
+};
+
+static uint32 patterns165 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types165 [] = {
+264,
+313,
+353,
+390,
+426,
+461,
+476,
+529,
+578,
+641,
+677,
+713,
+750,
+786,
+818,
+};
+
+static uint32 patterns380 [] = {
+SK_INT32,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types380 [] = {
+1027,
+1037,
+1053,
+};
+
+static uint32 patterns394 [] = {
+SK_INT32,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types394 [] = {
+1014,
+1043,
+1065,
+};
+
+static uint32 patterns319 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types319 [] = {
+272,
+320,
+360,
+397,
+433,
+468,
+483,
+536,
+585,
+630,
+666,
+702,
+739,
+775,
+825,
+};
+
+static uint32 patterns153 [] = {
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types153 [] = {
+619,
+};
+
+static uint32 patterns252 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types252 [] = {
+955,
+};
+
+static uint32 patterns306 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types306 [] = {
+276,
+326,
+366,
+403,
+439,
+488,
+554,
+593,
+628,
+664,
+700,
+737,
+773,
+840,
+866,
+};
+
+static uint32 patterns382 [] = {
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types382 [] = {
+1046,
+1048,
+1060,
+};
+
+static uint32 patterns204 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types204 [] = {
+274,
+322,
+362,
+399,
+435,
+470,
+485,
+538,
+587,
+632,
+668,
+704,
+741,
+777,
+827,
+};
+
+static uint32 patterns391 [] = {
+SK_INT32,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types391 [] = {
+1029,
+1033,
+};
+
+static uint32 patterns247 [] = {
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types247 [] = {
+935,
+};
+
+static uint32 patterns240 [] = {
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types240 [] = {
+915,
+};
+
+static uint32 patterns326 [] = {
+SK_UINT32,
+SK_POINTER,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types326 [] = {
+574,
+613,
+617,
+886,
+912,
+};
+
+static uint32 patterns4 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types4 [] = {
+251,
+306,
+346,
+383,
+419,
+490,
+551,
+589,
+636,
+672,
+708,
+745,
+781,
+839,
+863,
+};
+
+static uint32 patterns375 [] = {
+SK_INT32,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types375 [] = {
+1035,
+1052,
+1057,
+};
+
+static uint32 patterns91 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_UINT32,
+SK_INT32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_CHAR32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types91 [] = {
+279,
+328,
+368,
+405,
+441,
+506,
+558,
+597,
+662,
+685,
+721,
+758,
+807,
+843,
+870,
+};
+
+static uint32 patterns79 [] = {
+SK_REF,
+SK_POINTER,
+SK_UINT16,
+SK_REAL32,
+SK_UINT8,
+SK_CHAR8,
+SK_INT32,
+SK_UINT32,
+SK_CHAR32,
+SK_REAL64,
+SK_INT8,
+SK_INT16,
+SK_INT64,
+SK_UINT64,
+SK_BOOL,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types79 [] = {
+259,
+308,
+348,
+385,
+421,
+456,
+471,
+526,
+575,
+638,
+674,
+710,
+747,
+783,
+813,
+};
+
+static uint32 patterns397 [] = {
+SK_INT32,
+SK_REF,
+SK_INT32,
+SK_INT32,
+SK_REF,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX dyn_types397 [] = {
+1031,
+1070,
+1072,
+};
+
+static struct cecil_info type_val[] = {
+{(int) 0, (EIF_TYPE_INDEX) 968, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 3, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 226, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns423, dyn_types423},
+{(int) 0, (EIF_TYPE_INDEX) 967, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 145, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 2, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 38, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns8, dyn_types8},
+{(int) 0, (EIF_TYPE_INDEX) 240, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns109, dyn_types109},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 962, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns167, dyn_types167},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns129, dyn_types129},
+{(int) 0, (EIF_TYPE_INDEX) 25, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 85, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 172, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns401, dyn_types401},
+{(int) 0, (EIF_TYPE_INDEX) 43, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 975, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns194, dyn_types194},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns325, dyn_types325},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 156, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 5, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 53, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns256, dyn_types256},
+{(int) 0, (EIF_TYPE_INDEX) 204, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 213, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns399, dyn_types399},
+{(int) 0, (EIF_TYPE_INDEX) 997, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 184, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 110, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 181, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 965, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 20, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns168, dyn_types168},
+{(int) 0, (EIF_TYPE_INDEX) 149, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns260, dyn_types260},
+{(int) 0, (EIF_TYPE_INDEX) 178, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 147, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 964, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 64, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 978, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 165, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 59, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns101, dyn_types101},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns51, dyn_types51},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 171, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 101, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 185, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 129, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 48, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 91, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 11, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 26, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns403, dyn_types403},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns239, dyn_types239},
+{(int) 0, (EIF_TYPE_INDEX) 222, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 61, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns103, dyn_types103},
+{(int) 0, (EIF_TYPE_INDEX) 220, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 987, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns297, dyn_types297},
+{(int) 0, (EIF_TYPE_INDEX) 47, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns10, dyn_types10},
+{(int) 0, (EIF_TYPE_INDEX) 991, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1007, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 116, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1003, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 86, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns2, dyn_types2},
+{(int) 0, (EIF_TYPE_INDEX) 196, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 108, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 169, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 16, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 75, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns233, dyn_types233},
+{(int) 0, (EIF_TYPE_INDEX) 159, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 58, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 32, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 88, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 195, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns30, dyn_types30},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns222, dyn_types222},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns94, dyn_types94},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns231, dyn_types231},
+{(int) 0, (EIF_TYPE_INDEX) 976, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 182, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns100, dyn_types100},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns392, dyn_types392},
+{(int) 0, (EIF_TYPE_INDEX) 144, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns183, dyn_types183},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 97, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 201, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 115, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 15, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 166, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 148, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 52, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 152, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 142, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 39, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns390, dyn_types390},
+{(int) 0, (EIF_TYPE_INDEX) 995, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 50, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 234, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns383, dyn_types383},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1010, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1001, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 973, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 960, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 28, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 128, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns148, dyn_types148},
+{(int) 0, (EIF_TYPE_INDEX) 151, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 54, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns224, dyn_types224},
+{(int) 0, (EIF_TYPE_INDEX) 84, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns269, dyn_types269},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 996, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 133, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 63, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 982, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 214, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns248, dyn_types248},
+{(int) 0, (EIF_TYPE_INDEX) 90, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 146, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 102, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 95, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 94, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 79, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 207, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns181, dyn_types181},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns9, dyn_types9},
+{(int) 0, (EIF_TYPE_INDEX) 24, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 76, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 999, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 179, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 103, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 46, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 37, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns349, dyn_types349},
+{(int) 0, (EIF_TYPE_INDEX) 137, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 230, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 127, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 62, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 111, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 122, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 243, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 31, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 117, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 4, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 69, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns200, dyn_types200},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns92, dyn_types92},
+{(int) 0, (EIF_TYPE_INDEX) 192, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 238, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns219, dyn_types219},
+{(int) 0, (EIF_TYPE_INDEX) 114, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 993, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns309, dyn_types309},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns36, dyn_types36},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 68, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 163, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns235, dyn_types235},
+{(int) 0, (EIF_TYPE_INDEX) 990, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 92, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 141, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 83, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 71, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 113, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 87, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 244, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1005, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 65, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns251, dyn_types251},
+{(int) 0, (EIF_TYPE_INDEX) 1009, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 17, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns197, dyn_types197},
+{(int) 0, (EIF_TYPE_INDEX) 134, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 988, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 7, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1002, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 979, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 153, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 219, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns381, dyn_types381},
+{(int) 0, (EIF_TYPE_INDEX) 136, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 8, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 44, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns330, dyn_types330},
+{(int) 0, (EIF_TYPE_INDEX) 10, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 82, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns157, dyn_types157},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 126, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 983, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 104, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 21, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 73, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 168, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 78, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 241, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 205, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns404, dyn_types404},
+{(int) 0, (EIF_TYPE_INDEX) 29, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 98, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns384, dyn_types384},
+{(int) 0, (EIF_TYPE_INDEX) 100, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 99, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 210, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 23, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 72, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 180, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 190, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 130, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns11, dyn_types11},
+{(int) 0, (EIF_TYPE_INDEX) 228, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 131, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 992, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns396, dyn_types396},
+{(int) 0, (EIF_TYPE_INDEX) 93, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 998, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 27, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 77, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 154, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 139, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 160, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 217, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns322, dyn_types322},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns400, dyn_types400},
+{(int) 0, (EIF_TYPE_INDEX) 237, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 150, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns56, dyn_types56},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns320, dyn_types320},
+{(int) 0, (EIF_TYPE_INDEX) 123, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 157, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 66, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 981, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 56, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 211, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 971, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns43, dyn_types43},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns135, dyn_types135},
+{(int) 0, (EIF_TYPE_INDEX) 233, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns7, dyn_types7},
+{(int) 0, (EIF_TYPE_INDEX) 1004, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns271, dyn_types271},
+{(int) 0, (EIF_TYPE_INDEX) 193, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 112, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 161, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 42, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 121, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 986, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 202, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 18, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 14, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns402, dyn_types402},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns345, dyn_types345},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns393, dyn_types393},
+{(int) 0, (EIF_TYPE_INDEX) 970, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 57, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 963, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns180, dyn_types180},
+{(int) 0, (EIF_TYPE_INDEX) 140, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 30, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 183, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 138, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 109, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 67, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 972, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 984, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 55, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns39, dyn_types39},
+{(int) 0, (EIF_TYPE_INDEX) 96, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 225, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 80, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 51, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns6, dyn_types6},
+{(int) 0, (EIF_TYPE_INDEX) 41, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 170, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 969, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 974, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 132, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns189, dyn_types189},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 124, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns84, dyn_types84},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 186, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 176, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns395, dyn_types395},
+{(int) 0, (EIF_TYPE_INDEX) 1006, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 45, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 89, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 208, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 236, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns214, dyn_types214},
+{(int) 0, (EIF_TYPE_INDEX) 40, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 189, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 977, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 198, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 961, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 74, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1000, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 49, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns258, dyn_types258},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns165, dyn_types165},
+{(int) 0, (EIF_TYPE_INDEX) 106, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns380, dyn_types380},
+{(int) 0, (EIF_TYPE_INDEX) 162, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 105, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 158, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 119, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 155, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns394, dyn_types394},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns319, dyn_types319},
+{(int) 0, (EIF_TYPE_INDEX) 966, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 9, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 1008, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 173, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 107, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 125, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 242, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns153, dyn_types153},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns252, dyn_types252},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns306, dyn_types306},
+{(int) 0, (EIF_TYPE_INDEX) 143, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns382, dyn_types382},
+{(int) 0, (EIF_TYPE_INDEX) 120, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns204, dyn_types204},
+{(int) 0, (EIF_TYPE_INDEX) 19, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns391, dyn_types391},
+{(int) 0, (EIF_TYPE_INDEX) 167, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns247, dyn_types247},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns240, dyn_types240},
+{(int) 0, (EIF_TYPE_INDEX) 980, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 239, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 60, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 229, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns326, dyn_types326},
+{(int) 0, (EIF_TYPE_INDEX) 135, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 959, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns4, dyn_types4},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns375, dyn_types375},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 985, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns91, dyn_types91},
+{(int) 0, (EIF_TYPE_INDEX) 164, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 177, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 994, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 235, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 70, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 34, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 989, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 13, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 187, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, patterns79, dyn_types79},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 199, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 231, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 35, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 216, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 118, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 232, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 174, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 36, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 81, NULL, NULL},
+{(int) 2, (EIF_TYPE_INDEX) 0, patterns397, dyn_types397},
+{(int) 0, (EIF_TYPE_INDEX) 175, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 223, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 6, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 33, NULL, NULL},
+};
+
+struct ctable egc_ce_type_init = {(int32) 463, sizeof(struct cecil_info),type_key, (char *) type_val};
+
+static char * exp_type_key [] = {
+"NATURAL_64",
+"NATURAL_32",
+"REAL_64",
+"NATURAL_8",
+(char *) 0,
+"INTEGER_16",
+"CHARACTER_8",
+(char *) 0,
+"INTEGER_32",
+(char *) 0,
+"UTF_CONVERTER",
+"UTIL",
+"INTEGER_8",
+"BOOLEAN",
+"REAL_32",
+"POINTER",
+"CHARACTER_32",
+"TYPED_POINTER",
+(char *) 0,
+"INTEGER_64",
+(char *) 0,
+"FILE_UTILITIES",
+"NATURAL_16",
+};
+
+static uint32 exp_patterns391 [] = {
+SK_INT32,
+SK_REF,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX exp_dyn_types391 [] = {
+1028,
+1032,
+};
+
+static uint32 exp_patterns10 [] = {
+SK_POINTER,
+SK_REF,
+SK_CHAR32,
+SK_INT8,
+SK_UINT32,
+SK_INT64,
+SK_BOOL,
+SK_CHAR8,
+SK_UINT8,
+SK_INT16,
+SK_REAL64,
+SK_UINT64,
+SK_UINT16,
+SK_REAL32,
+SK_INT32,
+SK_INVALID
+};
+
+static EIF_TYPE_INDEX exp_dyn_types10 [] = {
+247,
+253,
+343,
+511,
+517,
+523,
+540,
+544,
+854,
+890,
+894,
+897,
+900,
+918,
+925,
+};
+
+static struct cecil_info exp_type_val[] = {
+{(int) 0, (EIF_TYPE_INDEX) 224, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 212, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 206, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 209, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 221, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 197, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 218, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 22, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, exp_patterns391, exp_dyn_types391},
+{(int) 0, (EIF_TYPE_INDEX) 188, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 203, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 191, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 227, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 194, NULL, NULL},
+{(int) 1, (EIF_TYPE_INDEX) 0, exp_patterns10, exp_dyn_types10},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 200, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 0, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 12, NULL, NULL},
+{(int) 0, (EIF_TYPE_INDEX) 215, NULL, NULL},
+};
+
+struct ctable egc_ce_exp_type_init = {(int32) 23, sizeof(struct cecil_info),exp_type_key, (char *) exp_type_val};
+
+
+#ifdef __cplusplus
+}
+#endif

@@ -1,0 +1,9 @@
+new_game(advanced)
+fire([A,6])
+fire([B,7])
+fire([C,8])
+bomb([D,9],[D,10])
+bomb([E,1],[F,1])
+fire([F,7])
+fire([E,7])
+

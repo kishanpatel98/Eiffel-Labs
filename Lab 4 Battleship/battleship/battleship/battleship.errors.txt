@@ -1,0 +1,40 @@
+-- Errors
+
+	-- Below is a list of errors and their priorities
+new_game (level: LEVEL)
+debug_test (level: LEVEL)
+	-- Both new_game and debug_test share the same errors and priorities
+	e1. Game already started
+
+fire (coordinate: COORDINATE)
+	e2. Game not started
+	e3. No shots remaining
+	e5. Invalid coordinate
+	e6. Already fired there
+
+bomb (coordinate1: COORDINATE; coordinate2: COORDINATE)
+	e2. Game not started
+	e4. No bombs remaining
+	e7. Bomb coordinates must be adjacent
+	e5. Invalid coordinate
+	e6. Already fired there
+	
+-- Game Messages
+
+	-- Below is a list of all status messages the game can output
+	-- Multiple messages may, and often will, be outputted at once
+	s1. Start a new game
+	s2. Fire Away!
+	s3. Keep Firing!
+	s4. Hit!
+	s5. Miss!
+	s6. You Win!
+	s7. Game Over
+	 
+	-- In addition there are two status messages that vary by ship size
+	-- ships SIZE are always outputted of the form 1x1, 2x1, 3x1, ... nx1
+	s8. size sunk!
+	s9. size1 sunk and size2 sunk! 
+
+
+	

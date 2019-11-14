@@ -1,0 +1,33 @@
+system battleship
+-- description ToDo
+
+--  Types
+
+type COLUMN = 1..12 
+	-- x-coordinate of the board
+type ROW = {A, B, C, D, E, F, G, H, I, J, K, L}   
+	-- y-coordinate of the board
+type COORDINATE = TUPLE[row: ROW; column: COLUMN]
+
+type LEVEL = {easy, medium, hard, advanced} 
+	-- easy is 4x4 and gets 8 shots and 2 bombs for 2 ships
+	-- medium is 6x6 and gets 16 shots and 3 bombs for 3 ships
+	-- hard is 8x8 and gets 24 shots and 5 bombs for 5 ships
+	-- advanced is 12x12 gets 40 shots and 7 bombs for 7 ships
+
+-- User Actions - Version1
+new_game (level: LEVEL)
+	-- game based on random placement of ships
+	-- winner sinks all ships
+	-- loser when we run out of shots and bombs
+
+debug_test (level: LEVEL)
+	-- for deterministic testing, see documentation
+
+fire (coordinate: COORDINATE)
+bomb (coordinate1: COORDINATE; coordinate2: COORDINATE)
+	-- coordinates must be adjacent
+	-- bombs do not count as shots
+	
+
+

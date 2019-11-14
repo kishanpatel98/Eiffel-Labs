@@ -1,0 +1,5 @@
+#!/bin/bash
+# source gobo.sh
+gelex analyzer_scanner.l
+geyacc -v temp.txt -o analyzer_parser.e -t analyzer_tokens analyzer_parser.y
+
